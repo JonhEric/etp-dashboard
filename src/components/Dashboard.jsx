@@ -6,9 +6,9 @@ export default function Dashboard() {
   return (    
 // Dashboard.jsx
 
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex bg-gray-100">
       {/* Sidebar */}
-      <div className="w-1/5 bg-gray-800 text-white p-4">
+      <div className="w-1/5 h-auto bg-gray-800 text-white p-4">
         {/* Sidebar Content */}
         <ul>
           <li className='p-3 hover:bg-slate-400'><a href="">Professeurs</a></li>
