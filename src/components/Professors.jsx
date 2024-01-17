@@ -154,14 +154,12 @@ export default function Professors() {
 
   return (
     <>
-      <h2 className="text-2xl font-bold mb-4">Gestion des Professeurs</h2>
 
-      <div className="mb-4">
-        <h3 className="text-xl font-bold mb-2">Nouveau Professeur</h3>
-        <form className="flex flex-col my-6">
+      <div className="mb-4 mx-auto w-1/2">
+        <form className="flex flex-col p-6 my-6 mx-auto rounded-sm bg-slate-200">
           <label>Matricule</label>
           <input
-            className="border outline-none my-3 p-2"
+            className="border outline-none mb-3 p-2"
             type="text"
             name="matricule"
             value={newProfessor.matricule}
@@ -169,7 +167,7 @@ export default function Professors() {
           />
           <label>Nom</label>
           <input
-            className="border outline-none my-3 p-2"
+            className="border outline-none mb-3 p-2"
             type="text"
             name="nom"
             value={newProfessor.nom}
@@ -177,7 +175,7 @@ export default function Professors() {
           />
           <label>Prénoms</label>
           <input
-            className="border outline-none my-3 p-2"
+            className="border outline-none mb-3 p-2"
             type="text"
             name="prenoms"
             value={newProfessor.prenoms}
@@ -185,7 +183,7 @@ export default function Professors() {
           />
           <label>Contact</label>
           <input
-            className="border outline-none my-3 p-2"
+            className="border outline-none mb-3 p-2"
             type="text"
             name="contact"
             value={newProfessor.contact}
@@ -193,7 +191,7 @@ export default function Professors() {
           />
           <label>Email</label>
           <input
-            className="border outline-none my-3 p-2"
+            className="border outline-none mb-3 p-2"
             type="mail"
             name="email"
             value={newProfessor.email}
@@ -201,7 +199,7 @@ export default function Professors() {
           />
           <label>Adresse</label>
           <input
-            className="border outline-none my-3 p-2"
+            className="border outline-none mb-3 p-2"
             type="text"
             name="adresse"
             value={newProfessor.adresse}
@@ -209,7 +207,7 @@ export default function Professors() {
           />
           <label>Sexe</label>
           <select
-            className="border outline-none my-3 p-2"
+            className="border outline-none mb-3 p-2"
             name="sexe"
             value={newProfessor.sexe}
             onChange={handleInputChange}
@@ -221,16 +219,15 @@ export default function Professors() {
           <button
             type="button"
             onClick={handleAddProfessor}
-            className="border rounded-sm px-3 py-2 bg-green-300 "
+            className=" my-3 border rounded-sm px-3 py-2 bg-green-300 "
           >
-            Ajouter Professeur
+            Save
           </button>
         </form>
       </div>
 
       <div>
-        <h3 className="text-xl font-bold mb-2">Liste des Professeurs</h3>
-        <table className="border-collapse w-full">
+        <table className="border-collapse w-full mt-6">
           <thead>
             <tr className="border-b">
               <th className="p-3 text-left">Matricule</th>
