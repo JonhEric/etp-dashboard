@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function Professors() {
-  const [professors, setProfessors] = useState([
+  // Listes des Professeurs
+  const fakeProfessors = [
     {
       matricule: "001",
       nom: "Rakoto",
@@ -10,7 +12,7 @@ export default function Professors() {
       contact: "034 56 321 54",
       email: "test@example.com",
       adresse: "2 Rue Passing",
-      sexe: "Homme"
+      sexe: "Homme",
     },
     {
       matricule: "002",
@@ -19,7 +21,7 @@ export default function Professors() {
       contact: "032 11 456 78",
       email: "dev@example.com",
       adresse: "Anjanahary",
-      sexe: "Homme"
+      sexe: "Homme",
     },
     {
       matricule: "003",
@@ -28,9 +30,66 @@ export default function Professors() {
       contact: "034 31 425 46",
       email: "devfront@example.com",
       adresse: "miadana be",
-      sexe: "Homme"
-    }
-  ]);
+      sexe: "Homme",
+    },
+    {
+      matricule: "004",
+      nom: "Dupont",
+      prenoms: "Pierre",
+      contact: "065 98 765 43",
+      email: "pierre@example.com",
+      adresse: "123 Rue de Paris",
+      sexe: "Homme",
+    },
+    {
+      matricule: "005",
+      nom: "Durand",
+      prenoms: "Marie",
+      contact: "078 12 345 67",
+      email: "marie@example.com",
+      adresse: "456 Avenue de Lyon",
+      sexe: "Femme",
+    },
+    {
+      matricule: "006",
+      nom: "Dupont",
+      prenoms: "Pierre",
+      contact: "065 98 765 43",
+      email: "pierre@example.com",
+      adresse: "123 Rue de Paris",
+      sexe: "Homme",
+    },
+    {
+      matricule: "007",
+      nom: "Durand",
+      prenoms: "Marie",
+      contact: "078 12 345 67",
+      email: "marie@example.com",
+      adresse: "456 Avenue de Lyon",
+      sexe: "Femme",
+    },
+    {
+      matricule: "008",
+      nom: "Dupont",
+      prenoms: "Pierre",
+      contact: "065 98 765 43",
+      email: "pierre@example.com",
+      adresse: "123 Rue de Paris",
+      sexe: "Homme",
+    },
+    {
+      matricule: "009",
+      nom: "Durand",
+      prenoms: "Marie",
+      contact: "078 12 345 67",
+      email: "marie@example.com",
+      adresse: "456 Avenue de Lyon",
+      sexe: "Femme",
+    },
+    // Ajoute d'autres professeurs fictifs au besoin jusqu'à atteindre au moins 15
+  ];
+  
+  const [professors, setProfessors] = useState(fakeProfessors);
   const [selectedProfessorIndex, setSelectedProfessorIndex] = useState(null);
   const [newProfessor, setNewProfessor] = useState({
     matricule: "",
@@ -174,14 +233,14 @@ export default function Professors() {
         <table className="border-collapse w-full">
           <thead>
             <tr className="border-b">
-              <th className="p-3">Matricule</th>
-              <th className="p-3">Nom</th>
-              <th className="p-3">Prénoms</th>
-              <th className="p-3">Contact</th>
-              <th className="p-3">Email</th>
-              <th className="p-3">Adresse</th>
-              <th className="p-3">Sexe</th>
-              <th className="p-3">Actions</th>
+              <th className="p-3 text-left">Matricule</th>
+              <th className="p-3 text-left">Nom</th>
+              <th className="p-3 text-left">Prénoms</th>
+              <th className="p-3 text-left">Contact</th>
+              <th className="p-3 text-left">Email</th>
+              <th className="p-3 text-left">Adresse</th>
+              <th className="p-3 text-left">Sexe</th>
+              <th className="p-3 text-left">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -195,10 +254,14 @@ export default function Professors() {
                 <td className="p-3">{professor.adresse}</td>
                 <td className="p-3">{professor.sexe}</td>
                 <td className="p-3">
-                  <button onClick={() => handleUpdateProfessor(index)}>
+                  <button
+                  className="mr-2 px-3 py-1 bg-blue-500 text-white rounded"
+                  onClick={() => handleUpdateProfessor(index)}>
                     Editer
                   </button>
-                  <button onClick={() => handleDeleteProfessor(index)}>
+                  <button 
+                  className="px-3 py-1 bg-red-500 text-white rounded"
+                  onClick={() => handleDeleteProfessor(index)}>
                     Suppr
                   </button>
                 </td>
